@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="text-align:center;">Show Mini Statement</h1>
+<form method="post">{% csrf_token %}
+  <table style="margin-left:700px; margin-top:300px;">
+    <tr>
+         <th><label style="font-size: 30px; color: grey;">4 Digit Pin:</label></th>
+         <td><input type="number" name="pin" size="35" placeholder="Enter 4-Digit Pin" class="form-control" id="exampleFormControlInput2"></td>
+     </tr>
+    <tr>
+      <th><label style="font-size: 30px; color: grey;">Mini Statement:</label></th>
+      <td><select class="form-select" aria-label="Default select example" name="statement">
+      <option >--Select--</option>
+      <option value="withdraw">Withdraw</option>
+      <option value="deposit">Deposit</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td><input type="submit" class="btn btn-success btn-lg" value="Generate Statement"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

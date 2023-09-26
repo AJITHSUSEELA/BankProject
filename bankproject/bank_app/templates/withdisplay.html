@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script>
+        function myfunction(){
+          var body=document.getElementById('body').innerHTML;
+          var data=document.getElementById('data').innerHTML;
+          document.getElementById('body').innerHTML=data;
+          window.print()
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+<div id="data">
+<h1>MiniStatement(Withdraw):</h1>
+<table border="2px">
+    <tr>
+        <th>Sno.</th>
+        <th>Date</th>
+        <th>Amount</th>
+    </tr>
+    {% for i in a %}
+    {% if i.uid == id %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.amount}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+    </div>
+<button onclick="myfunction()">Print Withdraw Statement</button>
+</body>
+</html>
